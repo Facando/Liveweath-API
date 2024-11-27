@@ -1,0 +1,272 @@
+/* Reset de estilos para asegurar consistencia en todos los navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos básicos del body */
+body {
+    background: linear-gradient(135deg, #3e79bd, #42a7c9);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background 0.3s, color 0.3s;
+}
+
+#dark-mode-toggle {
+    position: absolute;
+    margin-top: 20px;
+    
+    
+    display: flex;
+    float: right;
+    
+    
+    margin-right: 44.5%;
+    padding: 10px 0px;
+    background: #23628b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    
+}
+
+
+
+body.light-mode {
+    background: linear-gradient(135deg , #2d5583,#3698e7 ,#2da3d1);
+   
+    color: #333;
+}
+
+body.dark-mode {
+    background: linear-gradient(135deg, #1f1f1f, #2b2b2b);
+    color: #fff;
+}
+
+/* Estilos de la sección principal */
+.weather-content {
+    background: linear-gradient(135deg, rgb(255, 217, 0, 0.9), rgba(247, 233, 154, 0.87));
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 50px rgba(255, 217, 0, 0.493);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode .weather-content {
+    background:  rgba(19, 19, 19, 0.9);
+    color: #fff;
+}
+
+/* Estilo del título */
+.weather-content h1 {
+    margin-bottom: 25px;
+    font-size: 28px;
+    color: #2c3e50;
+    transition: color 0.3s;
+}
+
+body.dark-mode .weather-content h1 {
+    color: #ddd;
+}
+
+/* Estilos básicos */
+.weather-content h2 {
+    font-size: 36px;
+    transition: color 0.3s ease-in-out;
+}
+
+
+
+/* Estilos de la sección de sugerencias */
+.suggestions {
+    border: 1px solid #ccc;
+    border-top: none;
+    max-height: 150px;
+    overflow-y: auto;
+    position: absolute;
+    width: calc(100% - 20px); /* Ajuste para que no sobresalga del contenedor */
+    background: white;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 5px;
+    border-radius: 0 0 10px 10px;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode .suggestions {
+    background: #444;
+    color: #fff;
+}
+
+.suggestions div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestions div:hover {
+    background-color: #f0f0f0;
+}
+
+body.dark-mode .suggestions div:hover {
+    background-color: #555;
+}
+
+/* Estilos de la sección de resultados */
+.result {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #2c3e50;
+    transition: color 0.3s;
+    
+}
+
+body.dark-mode .result {
+    color: #ddd;
+}
+
+/* Estilo del formulario */
+.get-weather {
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Necesario para posicionar correctamente las sugerencias */
+}
+
+/* Estilo de los inputs y select */
+.get-weather input[type="text"],
+.get-weather select {
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s, color 0.3s;
+}
+
+body.dark-mode .get-weather input[type="text"],
+body.dark-mode .get-weather select {
+    background: #333;
+    color: #fff;
+    border: 2px solid #555;
+}
+
+.get-weather input[type="text"]:focus,
+.get-weather select:focus {
+    border: 2px solid #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+
+body.dark-mode .get-weather input[type="text"]:focus,
+body.dark-mode .get-weather select:focus {
+    border: 2px solid #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+}
+
+/* Estilo del botón */
+.get-weather input[type="submit"] {
+    padding: 15px;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+body.dark-mode .get-weather input[type="submit"] {
+    background: #cfb560;
+    color: #fff;
+}
+
+.get-weather input[type="submit"]:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+body.dark-mode .get-weather input[type="submit"]:hover {
+    background: #16a085;
+    transform: translateY(-2px);
+}
+
+.get-weather input[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+body.dark-mode .get-weather input[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+/* Estilo del placeholder */
+::placeholder {
+    color: #95a5a6;
+    opacity: 1; /* Soportado por todos los navegadores */
+}
+
+/* Estilos responsivos */
+@media (max-width: 400px) {
+    .weather-content {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .get-weather input[type="text"],
+    .get-weather select,
+    .get-weather input[type="submit"] {
+        font-size: 14px;
+    }
+}
+
+/* Estilo del botón de modo oscuro */
+#dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background: #23628b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.8s ease-in-out, transform 0.2s ease-in-out;
+}
+
+#dark-mode-toggle:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+#dark-mode-toggle:active {
+    background: #575757;
+    transform: translateY(1px);
+}
+
+#dark-mode-toggle:focus {
+    outline: none;
+}
+
+
+.suggestions    {
+    color: #000000;
+    top: 25%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffffe0;
+    border:none;
+    border-radius: 10px;
+    border-top: none;
+    z-index: 1;
+    max-height: 200px;
+    overflow-y: auto;
+}
